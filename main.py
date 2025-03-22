@@ -6,13 +6,14 @@ from aiogram.enums.parse_mode import ParseMode
 import os
 import json
 import random
+from dotenv import load_dotenv
 
 
 # JSON с искажениями
 with open('biases.json', 'r', encoding='utf-8') as file:
     biases = json.load(file)
 
-
+load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
